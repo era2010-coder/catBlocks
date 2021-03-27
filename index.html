@@ -1,7 +1,10 @@
 <script src="blockly_compressed.js"></script>
+<script src="javascript_compressed.js"></script>
 <script src="blocks_compressed.js"></script>
 
 <script src="msg/js/en.js"></script>
+
+<button onclick="runCode()">Run code</button>
 
 <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
 
@@ -14,6 +17,25 @@
   <block type="text"></block>
   <block type="text_print"></block>
 </xml>
+
+<script>
+      Blockly.JavaScript.addReservedWords('code');
+    var code = Blockly.JavaScript.workspaceToCode(workspace);
+</script>
+
+<script>
+
+  function runCode() {
+    
+  try {
+   eval(code);
+  } catch (e) {
+   alert(e);
+  }
+    
+  }
+  
+</script>
 
 <script>
   var workspace = Blockly.inject('blocklyDiv',
