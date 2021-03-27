@@ -27,6 +27,8 @@
 
   function runCode() {
     
+    var code = Blockly.JavaScript.workspaceToCode(workspace);
+    
   try {
    eval(code);
   } catch (e) {
